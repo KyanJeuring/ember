@@ -26,7 +26,7 @@ function M.apply()
   })
 
   hl("@variable.parameter", {
-    fg = p.fg1,
+    fg = p.fg0,
   })
 
   hl("@variable.parameter.builtin", {
@@ -34,7 +34,7 @@ function M.apply()
   })
 
   hl("@variable.member", {
-    fg = p.cyan,
+    fg = p.fg1,
   })
 
   -- ==================================================
@@ -58,11 +58,11 @@ function M.apply()
   -- ==================================================
 
   hl("@module", {
-    fg = p.cyan,
+    fg = p.fg1,
   })
 
   hl("@module.builtin", {
-    fg = p.cyan,
+    fg = p.fg1,
     italic = true,
   })
 
@@ -107,11 +107,14 @@ function M.apply()
   })
 
   -- ==================================================
-  -- Literals
+  -- Characters / literals
   -- ==================================================
 
   link("@character", "Character")
-  link("@character.special", "SpecialChar")
+
+  hl("@character.special", {
+    fg = p.orange_bright,
+  })
 
   link("@boolean", "Boolean")
   link("@number", "Number")
@@ -134,6 +137,14 @@ function M.apply()
     fg = p.cyan,
   })
 
+  hl("@constructor", {
+    fg = p.cyan,
+  })
+
+  -- ==================================================
+  -- Attributes / properties
+  -- ==================================================
+
   hl("@attribute", {
     fg = p.yellow,
   })
@@ -143,7 +154,7 @@ function M.apply()
   })
 
   hl("@property", {
-    fg = p.cyan,
+    fg = p.fg1,
   })
 
   -- ==================================================
@@ -173,10 +184,6 @@ function M.apply()
 
   hl("@function.method.call", {
     fg = p.blue,
-  })
-
-  hl("@constructor", {
-    fg = p.cyan,
   })
 
   -- ==================================================
@@ -227,20 +234,20 @@ function M.apply()
     fg = p.purple,
   })
 
-  hl("@keyword.debug", {
-    fg = p.red,
-  })
-
-  hl("@keyword.exception", {
-    fg = p.red,
-  })
-
   hl("@keyword.conditional", {
     fg = p.purple,
   })
 
   hl("@keyword.conditional.ternary", {
     fg = p.purple,
+  })
+
+  hl("@keyword.exception", {
+    fg = p.red,
+  })
+
+  hl("@keyword.debug", {
+    fg = p.red,
   })
 
   hl("@keyword.directive", {
@@ -274,7 +281,7 @@ function M.apply()
   link("@comment", "Comment")
 
   hl("@comment.documentation", {
-    fg = p.muted,
+    fg = p.fg1,
     italic = true,
   })
 
@@ -299,24 +306,24 @@ function M.apply()
   })
 
   -- ==================================================
-  -- Diff
+  -- Markup / HTML
   -- ==================================================
 
-  hl("@diff.plus", {
-    fg = p.green,
+  hl("@tag", {
+    fg = p.orange,
   })
 
-  hl("@diff.minus", {
-    fg = p.red,
+  hl("@tag.builtin", {
+    fg = p.orange,
   })
 
-  hl("@diff.delta", {
+  hl("@tag.attribute", {
     fg = p.yellow,
   })
 
-  -- ==================================================
-  -- Markup
-  -- ==================================================
+  hl("@tag.delimiter", {
+    fg = p.orange_dark,
+  })
 
   hl("@markup.heading", {
     fg = p.orange,
@@ -324,14 +331,17 @@ function M.apply()
   })
 
   hl("@markup.strong", {
+    fg = p.fg0,
     bold = true,
   })
 
   hl("@markup.italic", {
+    fg = p.fg0,
     italic = true,
   })
 
   hl("@markup.strikethrough", {
+    fg = p.muted,
     strikethrough = true,
   })
 
@@ -366,6 +376,22 @@ function M.apply()
 
   hl("@markup.list.unchecked", {
     fg = p.muted,
+  })
+
+  -- ==================================================
+  -- Diff
+  -- ==================================================
+
+  hl("@diff.plus", {
+    fg = p.green,
+  })
+
+  hl("@diff.minus", {
+    fg = p.red,
+  })
+
+  hl("@diff.delta", {
+    fg = p.yellow,
   })
 end
 

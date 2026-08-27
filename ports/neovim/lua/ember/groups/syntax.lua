@@ -57,7 +57,7 @@ function M.apply()
   })
 
   -- ==================================================
-  -- Statements
+  -- Statements / keywords
   -- ==================================================
 
   hl("Statement", {
@@ -72,16 +72,16 @@ function M.apply()
     fg = p.purple,
   })
 
-  hl("Label", {
-    fg = p.orange,
-  })
-
-  hl("Operator", {
-    fg = p.cyan,
-  })
-
   hl("Keyword", {
     fg = p.purple,
+  })
+
+  hl("StorageClass", {
+    fg = p.purple,
+  })
+
+  hl("Label", {
+    fg = p.orange,
   })
 
   hl("Exception", {
@@ -89,15 +89,19 @@ function M.apply()
   })
 
   -- ==================================================
-  -- Types / structures
+  -- Operators
+  -- ==================================================
+
+  hl("Operator", {
+    fg = p.fg1,
+  })
+
+  -- ==================================================
+  -- Types
   -- ==================================================
 
   hl("Type", {
     fg = p.cyan,
-  })
-
-  hl("StorageClass", {
-    fg = p.purple,
   })
 
   hl("Structure", {
@@ -109,20 +113,8 @@ function M.apply()
   })
 
   -- ==================================================
-  -- Misc
+  -- Preprocessor
   -- ==================================================
-
-  hl("Special", {
-    fg = p.orange,
-  })
-
-  hl("SpecialChar", {
-    fg = p.orange_bright,
-  })
-
-  hl("Delimiter", {
-    fg = p.fg1,
-  })
 
   hl("PreProc", {
     fg = p.orange,
@@ -142,6 +134,22 @@ function M.apply()
 
   hl("PreCondit", {
     fg = p.purple,
+  })
+
+  -- ==================================================
+  -- Misc
+  -- ==================================================
+
+  hl("Special", {
+    fg = p.orange,
+  })
+
+  hl("SpecialChar", {
+    fg = p.orange_bright,
+  })
+
+  hl("Delimiter", {
+    fg = p.fg1,
   })
 
   hl("Todo", {

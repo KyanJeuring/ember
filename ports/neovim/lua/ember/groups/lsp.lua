@@ -68,7 +68,7 @@ function M.apply()
 
   link("@lsp.type.variable", "@variable")
   link("@lsp.type.parameter", "@variable.parameter")
-  link("@lsp.type.property", "@property")
+  link("@lsp.type.property", "@variable.member")
 
   link("@lsp.type.function", "@function")
   link("@lsp.type.method", "@function.method")
@@ -83,6 +83,7 @@ function M.apply()
   link("@lsp.type.enumMember", "@constant")
 
   link("@lsp.type.namespace", "@module")
+
   link("@lsp.type.decorator", "@attribute")
 
   link("@lsp.type.macro", "@function.macro")
@@ -93,7 +94,9 @@ function M.apply()
 
   link("@lsp.type.comment", "@comment")
 
+  -- ==================================================
   -- Semantic modifiers
+  -- ==================================================
 
   hl("@lsp.mod.deprecated", {
     strikethrough = true,
