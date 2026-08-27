@@ -7,12 +7,15 @@ local function hl(group, opts)
 end
 
 function M.apply(config)
-  local transparent = config.transparent
-  local transparent_floats = config.transparent_floats
+  local bg =
+    config.transparent
+      and "NONE"
+      or p.bg0
 
-  local bg = transparent and "NONE" or p.bg0
-  local float_bg = transparent_floats and "NONE" or p.bg1
-  local float_border_bg = transparent_floats and "NONE" or p.bg1
+  local float_bg =
+    config.transparent_floats
+      and "NONE"
+      or p.bg1
 
   -- ==================================================
   -- Editor
@@ -49,7 +52,7 @@ function M.apply(config)
   })
 
   hl("EndOfBuffer", {
-    fg = transparent and p.muted or p.bg0,
+    fg = config.transparent and p.muted or p.bg0,
     bg = bg,
   })
 
@@ -58,7 +61,7 @@ function M.apply(config)
   -- ==================================================
 
   hl("CursorLine", {
-    bg = transparent and "NONE" or p.bg1,
+    bg = p.bg1,
   })
 
   hl("Visual", {
@@ -67,7 +70,7 @@ function M.apply(config)
 
   hl("MatchParen", {
     fg = p.orange,
-    bg = transparent and "NONE" or p.bg2,
+    bg = p.bg2,
     bold = true,
   })
 
@@ -93,7 +96,7 @@ function M.apply(config)
   })
 
   -- ==================================================
-  -- Separators
+  -- Windows
   -- ==================================================
 
   hl("WinSeparator", {
@@ -106,7 +109,7 @@ function M.apply(config)
   })
 
   -- ==================================================
-  -- Floating windows
+  -- Floats
   -- ==================================================
 
   hl("NormalFloat", {
@@ -115,8 +118,8 @@ function M.apply(config)
   })
 
   hl("FloatBorder", {
-    fg = p.bg3,
-    bg = float_border_bg,
+    fg = p.muted,
+    bg = float_bg,
   })
 
   hl("FloatTitle", {
