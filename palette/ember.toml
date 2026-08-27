@@ -1,0 +1,22 @@
+[base]
+bg0 = "#0B0B0B"
+bg1 = "#141414"
+bg2 = "#1C1C1C"
+bg3 = "#252525"
+
+fg0 = "#F2EEE9"
+fg1 = "#C9C3BC"
+muted = "#7F766E"
+
+[accent]
+orange = "#FF7500"
+orange_bright = "#FF8A2B"
+orange_dark = "#C95C00"
+
+[colors]
+red = "#F25F5C"
+green = "#8BCB82"
+yellow = "#E6C15A"
+blue = "#5B9CF6"
+purple = "#B58AF3"
+cyan = "#58C3C3"
