@@ -57,6 +57,41 @@ function M.apply(config)
   })
 
   -- ==================================================
+  -- Statusline / tabline
+  -- ==================================================
+
+  local ui_bg =
+    config.transparent
+      and "NONE"
+      or p.bg0
+
+  hl("StatusLine", {
+    fg = p.fg0,
+    bg = ui_bg,
+  })
+
+  hl("StatusLineNC", {
+    fg = p.muted,
+    bg = ui_bg,
+  })
+
+  hl("TabLine", {
+    fg = p.muted,
+    bg = ui_bg,
+  })
+
+  hl("TabLineFill", {
+    fg = p.muted,
+    bg = ui_bg,
+  })
+
+  hl("TabLineSel", {
+    fg = p.orange,
+    bg = ui_bg,
+    bold = true,
+  })
+
+  -- ==================================================
   -- Cursor / selection
   -- ==================================================
 
