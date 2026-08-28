@@ -144,6 +144,41 @@
       font-size: 0.92rem;
     }
 
+    .syntax-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 14px;
+    }
+
+    .syntax-role {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 14px 16px;
+      background: var(--bg1);
+      border: 1px solid var(--bg3);
+      border-radius: 14px;
+    }
+
+    .syntax-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      flex: 0 0 auto;
+      margin-top: 5px;
+    }
+
+    .syntax-role strong {
+      display: block;
+      color: var(--fg0);
+      margin-bottom: 2px;
+    }
+
+    .syntax-role span {
+      color: var(--fg1);
+      font-size: 0.92rem;
+    }
+
     .preview {
       margin-top: 46px;
       background: var(--bg1);
@@ -193,13 +228,21 @@
       white-space: pre-wrap;
     }
 
-    .kw { color: var(--purple); }
+    .syntax { color: var(--orange); }
+    .flow { color: var(--purple); }
     .fn { color: var(--blue); }
     .str { color: var(--green); }
     .num { color: var(--yellow); }
-    .const { color: var(--orange); }
+    .const { color: var(--yellow); }
     .type { color: var(--cyan); }
-    .comment { color: var(--muted); }
+    .member { color: var(--fg1); }
+    .variable { color: var(--fg0); }
+    .attr { color: var(--yellow); }
+    .error { color: var(--red); }
+    .comment {
+      color: var(--muted);
+      font-style: italic;
+    }
 
     footer {
       margin-top: 48px;
@@ -216,12 +259,12 @@
   <div class="container">
     <h1>Ember</h1>
     <p class="subtitle">
-      A dark theme built around a black base and a vivid orange accent.
+      A dark theme built around a black base and a vivid orange identity.
     </p>
 
     <div class="intro">
       <strong style="color: var(--orange);">Core identity:</strong>
-      black background, warm light foreground, and <code>#FF7500</code> as the signature accent.
+      black-first surfaces, warm light foregrounds, and <code>#FF7500</code> as the signature syntax and UI accent.
       <div class="hero-row">
         <div class="hero-chip"><strong>Background:</strong> #0B0B0B</div>
         <div class="hero-chip"><strong>Foreground:</strong> #F2EEE9</div>
@@ -246,7 +289,7 @@
           <div class="swatch-info">
             <div class="swatch-name">bg1</div>
             <div class="swatch-hex">#141414</div>
-            <div class="swatch-role">Raised surface</div>
+            <div class="swatch-role">Raised surfaces / floats</div>
           </div>
         </div>
 
@@ -255,7 +298,7 @@
           <div class="swatch-info">
             <div class="swatch-name">bg2</div>
             <div class="swatch-hex">#1C1C1C</div>
-            <div class="swatch-role">Panels / popups</div>
+            <div class="swatch-role">Panels / secondary surfaces</div>
           </div>
         </div>
 
@@ -264,7 +307,7 @@
           <div class="swatch-info">
             <div class="swatch-name">bg3</div>
             <div class="swatch-hex">#252525</div>
-            <div class="swatch-role">Highlights / borders</div>
+            <div class="swatch-role">Selections / borders / emphasis</div>
           </div>
         </div>
 
@@ -273,7 +316,7 @@
           <div class="swatch-info">
             <div class="swatch-name">fg0</div>
             <div class="swatch-hex">#F2EEE9</div>
-            <div class="swatch-role">Primary foreground</div>
+            <div class="swatch-role">Primary foreground / variables</div>
           </div>
         </div>
 
@@ -282,7 +325,7 @@
           <div class="swatch-info">
             <div class="swatch-name">fg1</div>
             <div class="swatch-hex">#C9C3BC</div>
-            <div class="swatch-role">Secondary foreground</div>
+            <div class="swatch-role">Secondary text / members / modules / punctuation</div>
           </div>
         </div>
 
@@ -291,7 +334,7 @@
           <div class="swatch-info">
             <div class="swatch-name">muted</div>
             <div class="swatch-hex">#7F766E</div>
-            <div class="swatch-role">Muted text / comments</div>
+            <div class="swatch-role">Comments / inactive / subdued UI</div>
           </div>
         </div>
       </div>
@@ -305,7 +348,7 @@
           <div class="swatch-info">
             <div class="swatch-name">orange</div>
             <div class="swatch-hex">#FF7500</div>
-            <div class="swatch-role">Primary Ember accent</div>
+            <div class="swatch-role">Primary Ember accent / language syntax / imports / modifiers / directives</div>
           </div>
         </div>
 
@@ -314,7 +357,7 @@
           <div class="swatch-info">
             <div class="swatch-name">orange_bright</div>
             <div class="swatch-hex">#FF8A2B</div>
-            <div class="swatch-role">Bright accent variant</div>
+            <div class="swatch-role">Built-ins / special syntax / stronger accent</div>
           </div>
         </div>
 
@@ -323,7 +366,7 @@
           <div class="swatch-info">
             <div class="swatch-name">orange_dark</div>
             <div class="swatch-hex">#C95C00</div>
-            <div class="swatch-role">Dark accent variant</div>
+            <div class="swatch-role">Dark accent / delimiters / low-emphasis orange</div>
           </div>
         </div>
       </div>
@@ -337,7 +380,7 @@
           <div class="swatch-info">
             <div class="swatch-name">red</div>
             <div class="swatch-hex">#F25F5C</div>
-            <div class="swatch-role">Errors / destructive states</div>
+            <div class="swatch-role">Errors / exceptions / destructive states</div>
           </div>
         </div>
 
@@ -355,7 +398,7 @@
           <div class="swatch-info">
             <div class="swatch-name">yellow</div>
             <div class="swatch-hex">#E6C15A</div>
-            <div class="swatch-role">Warnings / numbers</div>
+            <div class="swatch-role">Numbers / constants / attributes / warnings</div>
           </div>
         </div>
 
@@ -364,7 +407,7 @@
           <div class="swatch-info">
             <div class="swatch-name">blue</div>
             <div class="swatch-hex">#5B9CF6</div>
-            <div class="swatch-role">Functions / links</div>
+            <div class="swatch-role">Functions / methods / links / info</div>
           </div>
         </div>
 
@@ -373,7 +416,7 @@
           <div class="swatch-info">
             <div class="swatch-name">purple</div>
             <div class="swatch-hex">#B58AF3</div>
-            <div class="swatch-role">Keywords / control flow</div>
+            <div class="swatch-role">Control flow / loops / returns / keyword operators</div>
           </div>
         </div>
 
@@ -382,8 +425,47 @@
           <div class="swatch-info">
             <div class="swatch-name">cyan</div>
             <div class="swatch-hex">#58C3C3</div>
-            <div class="swatch-role">Types / info / properties</div>
+            <div class="swatch-role">Types / classes / interfaces / hints</div>
           </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section>
+      <h2 class="section-title"><span>Syntax</span> hierarchy</h2>
+      <div class="syntax-grid">
+        <div class="syntax-role">
+          <div class="syntax-dot" style="background:var(--orange);"></div>
+          <div><strong>Orange — language identity</strong><span>Imports, declarations, modifiers, directives, built-ins and special syntax.</span></div>
+        </div>
+        <div class="syntax-role">
+          <div class="syntax-dot" style="background:var(--purple);"></div>
+          <div><strong>Purple — program flow</strong><span>Conditionals, loops, returns, coroutines and keyword operators.</span></div>
+        </div>
+        <div class="syntax-role">
+          <div class="syntax-dot" style="background:var(--blue);"></div>
+          <div><strong>Blue — callable symbols</strong><span>Functions, methods and function calls.</span></div>
+        </div>
+        <div class="syntax-role">
+          <div class="syntax-dot" style="background:var(--cyan);"></div>
+          <div><strong>Cyan — types</strong><span>Types, classes, interfaces, structs and type parameters.</span></div>
+        </div>
+        <div class="syntax-role">
+          <div class="syntax-dot" style="background:var(--green);"></div>
+          <div><strong>Green — strings</strong><span>Strings, paths and successful/additive states.</span></div>
+        </div>
+        <div class="syntax-role">
+          <div class="syntax-dot" style="background:var(--yellow);"></div>
+          <div><strong>Yellow — values and metadata</strong><span>Numbers, constants, attributes, annotations and warnings.</span></div>
+        </div>
+        <div class="syntax-role">
+          <div class="syntax-dot" style="background:var(--red);"></div>
+          <div><strong>Red — exceptional states</strong><span>Errors, exceptions and destructive actions.</span></div>
+        </div>
+        <div class="syntax-role">
+          <div class="syntax-dot" style="background:var(--fg0);"></div>
+          <div><strong>Neutral — ordinary code</strong><span>Variables use fg0; members, modules and punctuation lean on fg1.</span></div>
         </div>
       </div>
     </section>
@@ -396,19 +478,24 @@
           <span class="dot yellow"></span>
           <span class="dot green"></span>
         </div>
-        <pre class="preview-code"><span class="comment"># Ember sample</span>
-<span class="kw">function</span> <span class="fn">greet</span>(name: <span class="type">string</span>) {
-  <span class="kw">const</span> message = <span class="str">"Hello, "</span> + name
-  <span class="kw">return</span> <span class="fn">print</span>(message)
+        <pre class="preview-code"><span class="comment">// Ember syntax hierarchy</span>
+<span class="syntax">import</span> { <span class="fn">print</span> } <span class="syntax">from</span> <span class="str">"./output"</span>
+
+<span class="syntax">function</span> <span class="fn">greet</span>(<span class="variable">name</span>: <span class="type">string</span>) {
+  <span class="syntax">const</span> <span class="variable">message</span> = <span class="str">"Hello, "</span> + <span class="variable">name</span>
+
+  <span class="flow">if</span> (<span class="variable">name</span>) {
+    <span class="flow">return</span> <span class="fn">print</span>(<span class="variable">message</span>)
+  }
 }
 
-<span class="kw">let</span> accent = <span class="const">"#FF7500"</span>
-<span class="kw">let</span> retries = <span class="num">3</span></pre>
+<span class="syntax">const</span> <span class="variable">accent</span> = <span class="str">"#FF7500"</span>
+<span class="syntax">let</span> <span class="variable">retries</span> = <span class="num">3</span></pre>
       </div>
     </div>
 
     <footer>
-      Ember palette preview — black-first UI with a strong orange identity and balanced complementary colors.
+      Ember palette preview — black-first UI, orange-led syntax, and complementary colors with clearly separated semantic roles.
     </footer>
   </div>
 </body>
