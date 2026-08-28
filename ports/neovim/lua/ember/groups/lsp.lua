@@ -94,6 +94,110 @@ function M.apply()
 
   link("@lsp.type.comment", "@comment")
 
+
+  -- ==================================================
+  -- Java
+  -- ==================================================
+  --
+  -- Java is very method-heavy, so using blue for every
+  -- semantic method token makes large call chains look
+  -- almost entirely blue.
+  --
+  -- Method calls therefore use orange, while method
+  -- declarations remain blue.
+
+  hl("@lsp.type.variable.java", {
+    fg = p.fg0,
+  })
+
+  hl("@lsp.type.parameter.java", {
+    fg = p.fg0,
+  })
+
+  hl("@lsp.type.property.java", {
+    fg = p.fg1,
+  })
+
+  hl("@lsp.type.class.java", {
+    fg = p.cyan,
+  })
+
+  hl("@lsp.type.interface.java", {
+    fg = p.cyan,
+  })
+
+  hl("@lsp.type.struct.java", {
+    fg = p.cyan,
+  })
+
+  hl("@lsp.type.type.java", {
+    fg = p.cyan,
+  })
+
+  hl("@lsp.type.typeParameter.java", {
+    fg = p.cyan,
+  })
+
+  hl("@lsp.type.enum.java", {
+    fg = p.cyan,
+  })
+
+  hl("@lsp.type.enumMember.java", {
+    fg = p.orange,
+  })
+
+  hl("@lsp.type.namespace.java", {
+    fg = p.fg1,
+  })
+
+  hl("@lsp.type.method.java", {
+    fg = p.orange,
+  })
+
+  hl("@lsp.typemod.method.declaration.java", {
+    fg = p.blue,
+    bold = true,
+  })
+
+  hl("@lsp.typemod.method.static.java", {
+    fg = p.orange_bright,
+  })
+
+  hl("@lsp.typemod.class.declaration.java", {
+    fg = p.cyan,
+    bold = true,
+  })
+
+  hl("@lsp.typemod.interface.declaration.java", {
+    fg = p.cyan,
+    bold = true,
+  })
+
+  hl("@lsp.typemod.enum.declaration.java", {
+    fg = p.cyan,
+    bold = true,
+  })
+
+  hl("@lsp.typemod.property.static.java", {
+    fg = p.yellow,
+  })
+
+  hl("@lsp.typemod.variable.static.java", {
+    fg = p.yellow,
+  })
+
+  hl("@lsp.typemod.property.readonly.java", {
+    fg = p.yellow,
+  })
+
+  hl("@lsp.typemod.variable.readonly.java", {
+    fg = p.yellow,
+  })
+
+  hl("@lsp.type.decorator.java", {
+    fg = p.yellow,
+  })
+
   -- ==================================================
   -- Semantic modifiers
   -- ==================================================
