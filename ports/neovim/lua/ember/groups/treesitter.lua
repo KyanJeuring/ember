@@ -198,31 +198,46 @@ function M.apply()
   -- Keywords
   -- ==================================================
 
+  -- General language syntax
   hl("@keyword", {
-    fg = p.purple,
+    fg = p.orange,
   })
 
-  hl("@keyword.coroutine", {
-    fg = p.purple,
-  })
-
+  -- function, fn, def, ...
   hl("@keyword.function", {
-    fg = p.purple,
+    fg = p.orange,
   })
 
-  hl("@keyword.operator", {
-    fg = p.purple,
-  })
-
+  -- import, package, require, use, ...
   hl("@keyword.import", {
-    fg = p.purple,
+    fg = p.orange,
   })
 
+  -- class, struct, interface, enum, ...
   hl("@keyword.type", {
+    fg = p.orange,
+  })
+
+  -- public, private, static, final, const, ...
+  hl("@keyword.modifier", {
+    fg = p.orange,
+  })
+
+  -- Directives / preprocessor syntax
+  hl("@keyword.directive", {
+    fg = p.orange,
+  })
+
+  hl("@keyword.directive.define", {
+    fg = p.orange,
+  })
+
+  -- Control flow
+  hl("@keyword.conditional", {
     fg = p.purple,
   })
 
-  hl("@keyword.modifier", {
+  hl("@keyword.conditional.ternary", {
     fg = p.purple,
   })
 
@@ -234,28 +249,21 @@ function M.apply()
     fg = p.purple,
   })
 
-  hl("@keyword.conditional", {
+  hl("@keyword.coroutine", {
     fg = p.purple,
   })
 
-  hl("@keyword.conditional.ternary", {
+  hl("@keyword.operator", {
     fg = p.purple,
   })
 
+  -- Exceptions / debugging
   hl("@keyword.exception", {
     fg = p.red,
   })
 
   hl("@keyword.debug", {
     fg = p.red,
-  })
-
-  hl("@keyword.directive", {
-    fg = p.orange,
-  })
-
-  hl("@keyword.directive.define", {
-    fg = p.orange,
   })
 
   -- ==================================================
@@ -382,27 +390,33 @@ function M.apply()
   -- Java
   -- ==================================================
 
+  -- class, interface, enum, record
   hl("@keyword.type.java", {
     fg = p.blue,
   })
 
+  -- public, private, protected, static, final, ...
   hl("@keyword.modifier.java", {
-    fg = p.purple,
+    fg = p.orange,
   })
 
+  -- extends, implements, instanceof, ...
   hl("@keyword.java", {
     fg = p.purple,
   })
 
+  -- Primitive / built-in types
   hl("@type.builtin.java", {
     fg = p.cyan,
     italic = true,
   })
 
+  -- Classes / interfaces / enums / records
   hl("@type.java", {
     fg = p.cyan,
   })
 
+  -- Methods
   hl("@function.method.java", {
     fg = p.blue,
   })
@@ -411,14 +425,17 @@ function M.apply()
     fg = p.blue,
   })
 
+  -- Fields
   hl("@variable.member.java", {
     fg = p.fg1,
   })
 
+  -- Constants
   hl("@constant.java", {
     fg = p.yellow,
   })
 
+  -- Annotations
   hl("@attribute.java", {
     fg = p.yellow,
   })

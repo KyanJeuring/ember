@@ -60,23 +60,26 @@ function M.apply()
   -- Statements / keywords
   -- ==================================================
 
+  -- General language syntax
   hl("Statement", {
-    fg = p.purple,
+    fg = p.orange,
   })
 
+  hl("Keyword", {
+    fg = p.orange,
+  })
+
+  -- public, private, static, const, final, ...
+  hl("StorageClass", {
+    fg = p.orange,
+  })
+
+  -- Control flow
   hl("Conditional", {
     fg = p.purple,
   })
 
   hl("Repeat", {
-    fg = p.purple,
-  })
-
-  hl("Keyword", {
-    fg = p.purple,
-  })
-
-  hl("StorageClass", {
     fg = p.purple,
   })
 
@@ -121,11 +124,11 @@ function M.apply()
   })
 
   hl("Include", {
-    fg = p.purple,
+    fg = p.orange,
   })
 
   hl("Define", {
-    fg = p.purple,
+    fg = p.orange,
   })
 
   hl("Macro", {
