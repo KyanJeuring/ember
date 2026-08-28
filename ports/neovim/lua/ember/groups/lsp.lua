@@ -98,13 +98,14 @@ function M.apply()
   -- ==================================================
   -- Java
   -- ==================================================
-  --
-  -- Java is very method-heavy, so using blue for every
-  -- semantic method token makes large call chains look
-  -- almost entirely blue.
-  --
-  -- Method calls therefore use orange, while method
-  -- declarations remain blue.
+
+  hl("@lsp.type.keyword.java", {
+    fg = p.purple,
+  })
+
+  hl("@lsp.type.modifier.java", {
+    fg = p.purple,
+  })
 
   hl("@lsp.type.variable.java", {
     fg = p.fg0,
@@ -142,8 +143,12 @@ function M.apply()
     fg = p.cyan,
   })
 
+  hl("@lsp.type.record.java", {
+    fg = p.cyan,
+  })
+
   hl("@lsp.type.enumMember.java", {
-    fg = p.orange,
+    fg = p.yellow,
   })
 
   hl("@lsp.type.namespace.java", {
@@ -151,31 +156,15 @@ function M.apply()
   })
 
   hl("@lsp.type.method.java", {
-    fg = p.orange,
+    fg = p.blue,
   })
 
   hl("@lsp.typemod.method.declaration.java", {
     fg = p.blue,
-    bold = true,
   })
 
   hl("@lsp.typemod.method.static.java", {
-    fg = p.orange_bright,
-  })
-
-  hl("@lsp.typemod.class.declaration.java", {
-    fg = p.cyan,
-    bold = true,
-  })
-
-  hl("@lsp.typemod.interface.declaration.java", {
-    fg = p.cyan,
-    bold = true,
-  })
-
-  hl("@lsp.typemod.enum.declaration.java", {
-    fg = p.cyan,
-    bold = true,
+    fg = p.blue,
   })
 
   hl("@lsp.typemod.property.static.java", {
