@@ -382,6 +382,19 @@ function M.apply()
   -- Java
   -- ==================================================
 
+  hl("@keyword.type.java", {
+    fg = p.orange,
+  })
+
+  hl("@keyword.modifier.java", {
+    fg = p.yellow,
+  })
+
+  hl("@type.builtin.java", {
+    fg = p.cyan,
+    italic = true,
+  })
+
   hl("@type.java", {
     fg = p.cyan,
   })
@@ -398,16 +411,16 @@ function M.apply()
     fg = p.orange,
   })
 
-  hl("@property.java", {
-    fg = p.yellow,
+  hl("@variable.member.java", {
+    fg = p.fg1,
   })
 
   hl("@constant.java", {
-    fg = p.orange_bright,
+    fg = p.yellow,
   })
 
-  hl("@variable.member.java", {
-    fg = p.fg1,
+  hl("@attribute.java", {
+    fg = p.yellow,
   })
 
   -- ==================================================
