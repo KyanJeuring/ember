@@ -37,7 +37,7 @@ function M.apply()
   })
 
   hl("Boolean", {
-    fg = p.orange,
+    fg = p.yellow,
   })
 
   hl("Float", {
