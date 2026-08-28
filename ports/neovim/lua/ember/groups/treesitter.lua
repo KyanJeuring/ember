@@ -382,44 +382,112 @@ function M.apply()
   -- Java
   -- ==================================================
 
-  hl("@keyword.type.java", {
-    fg = p.orange,
-  })
-
-  hl("@keyword.modifier.java", {
+  -- Modifiers
+  hl("@lsp.type.modifier.java", {
     fg = p.yellow,
   })
 
-  hl("@type.builtin.java", {
-    fg = p.cyan,
-    italic = true,
+  -- Variables / parameters
+  hl("@lsp.type.variable.java", {
+    fg = p.fg0,
   })
 
-  hl("@type.java", {
-    fg = p.cyan,
+  hl("@lsp.type.parameter.java", {
+    fg = p.fg0,
   })
 
-  hl("@constructor.java", {
-    fg = p.orange_bright,
-  })
-
-  hl("@function.method.java", {
-    fg = p.blue,
-  })
-
-  hl("@function.method.call.java", {
-    fg = p.orange,
-  })
-
-  hl("@variable.member.java", {
+  -- Fields / properties
+  hl("@lsp.type.property.java", {
     fg = p.fg1,
   })
 
-  hl("@constant.java", {
+  -- Classes / interfaces / types
+  hl("@lsp.type.class.java", {
+    fg = p.cyan,
+  })
+
+  hl("@lsp.type.interface.java", {
+    fg = p.cyan,
+  })
+
+  hl("@lsp.type.struct.java", {
+    fg = p.cyan,
+  })
+
+  hl("@lsp.type.type.java", {
+    fg = p.cyan,
+  })
+
+  hl("@lsp.type.typeParameter.java", {
+    fg = p.cyan,
+  })
+
+  -- Enums
+  hl("@lsp.type.enum.java", {
+    fg = p.cyan,
+  })
+
+  hl("@lsp.type.enumMember.java", {
+    fg = p.orange,
+  })
+
+  -- Packages / namespaces
+  hl("@lsp.type.namespace.java", {
+    fg = p.fg1,
+  })
+
+  -- Methods
+  hl("@lsp.type.method.java", {
+    fg = p.orange,
+  })
+
+  -- Method declarations
+  hl("@lsp.typemod.method.declaration.java", {
+    fg = p.blue,
+    bold = true,
+  })
+
+  -- Static methods
+  hl("@lsp.typemod.method.static.java", {
+    fg = p.orange_bright,
+  })
+
+  -- Class declarations
+  hl("@lsp.typemod.class.declaration.java", {
+    fg = p.cyan,
+    bold = true,
+  })
+
+  hl("@lsp.typemod.interface.declaration.java", {
+    fg = p.cyan,
+    bold = true,
+  })
+
+  hl("@lsp.typemod.enum.declaration.java", {
+    fg = p.cyan,
+    bold = true,
+  })
+
+  -- Static fields
+  hl("@lsp.typemod.property.static.java", {
     fg = p.yellow,
   })
 
-  hl("@attribute.java", {
+  hl("@lsp.typemod.variable.static.java", {
+    fg = p.yellow,
+  })
+
+  -- Constants / readonly fields
+  hl("@lsp.typemod.property.readonly.java", {
+    fg = p.yellow,
+  })
+
+  hl("@lsp.typemod.variable.readonly.java", {
+    fg = p.yellow,
+  })
+
+  -- Annotations
+  hl("@lsp.type.decorator.java", {
     fg = p.yellow,
   })
 
