@@ -21,15 +21,15 @@ function M.apply()
   -- ==================================================
 
   hl("Constant", {
-    fg = p.orange,
+    fg = p.yellow,
   })
 
   hl("String", {
-    fg = p.green,
+    fg = p.fg0,
   })
 
   hl("Character", {
-    fg = p.green,
+    fg = p.fg0,
   })
 
   hl("Number", {
@@ -60,7 +60,7 @@ function M.apply()
   -- Statements / keywords
   -- ==================================================
 
-  -- General language syntax
+  -- General language structure / declarations
   hl("Statement", {
     fg = p.orange,
   })
@@ -69,12 +69,15 @@ function M.apply()
     fg = p.orange,
   })
 
-  -- public, private, static, const, final, ...
   hl("StorageClass", {
     fg = p.orange,
   })
 
-  -- Control flow
+  hl("Label", {
+    fg = p.orange,
+  })
+
+  -- Logic / control flow
   hl("Conditional", {
     fg = p.purple,
   })
@@ -83,10 +86,7 @@ function M.apply()
     fg = p.purple,
   })
 
-  hl("Label", {
-    fg = p.orange,
-  })
-
+  -- Errors / exceptions
   hl("Exception", {
     fg = p.red,
   })

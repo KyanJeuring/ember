@@ -66,160 +66,78 @@ function M.apply()
   -- LSP semantic tokens
   -- ==================================================
 
-  -- Variables
+  -- Variables / members
   link("@lsp.type.variable", "@variable")
   link("@lsp.type.parameter", "@variable.parameter")
   link("@lsp.type.property", "@variable.member")
+  link("@lsp.type.event", "@variable.member")
 
   -- Functions / methods
   link("@lsp.type.function", "@function")
   link("@lsp.type.method", "@function.method")
+  link("@lsp.type.macro", "@function.macro")
 
-  -- Keywords / modifiers
-  link("@lsp.type.keyword", "@keyword")
-  link("@lsp.type.modifier", "@keyword.modifier")
-
-  -- Types
+  -- Types / classes
+  link("@lsp.type.type", "@type")
   link("@lsp.type.class", "@type")
   link("@lsp.type.interface", "@type")
   link("@lsp.type.struct", "@type")
-  link("@lsp.type.type", "@type")
+  link("@lsp.type.enum", "@type")
   link("@lsp.type.typeParameter", "@type")
 
-  -- Enums
-  link("@lsp.type.enum", "@type")
+  -- Constants
   link("@lsp.type.enumMember", "@constant")
 
   -- Modules / namespaces
   link("@lsp.type.namespace", "@module")
 
-  -- Attributes
+  -- Attributes / decorators
   link("@lsp.type.decorator", "@attribute")
-
-  -- Macros
-  link("@lsp.type.macro", "@function.macro")
 
   -- Literals
   link("@lsp.type.string", "@string")
   link("@lsp.type.number", "@number")
   link("@lsp.type.boolean", "@boolean")
+  link("@lsp.type.regexp", "@string.regexp")
+
+  -- Operators
+  link("@lsp.type.operator", "@operator")
 
   -- Comments
   link("@lsp.type.comment", "@comment")
 
+  -- Modifiers describe declarations, so they stay orange.
+  link("@lsp.type.modifier", "@keyword.modifier")
+
+  -- Let Tree-sitter own keyword coloring. LSP servers often expose
+  -- all keywords as one semantic token, which would otherwise flatten
+  -- orange declarations, purple control flow, and red exceptions.
+  hl("@lsp.type.keyword", {})
+
+  -- Readonly values are constants.
+  link("@lsp.typemod.variable.readonly", "@constant")
+  link("@lsp.typemod.property.readonly", "@constant")
+
   -- ==================================================
-  -- Java
+  -- Java / JDTLS
   -- ==================================================
 
-  -- Structural keywords:
-  -- extends, implements, instanceof, ...
-  hl("@lsp.type.keyword.java", {
-    fg = p.purple,
-  })
+  -- Keep Java keywords under Tree-sitter control so `new` / `assert`
+  -- can be orange while flow keywords remain purple and exceptions red.
+  hl("@lsp.type.keyword.java", {})
 
-  -- Modifiers:
-  -- public, private, protected, static, final, ...
-  hl("@lsp.type.modifier.java", {
-    fg = p.orange,
-  })
+  -- Access and declaration modifiers remain orange.
+  link("@lsp.type.modifier.java", "@keyword.modifier")
 
-  -- Variables / parameters
-  hl("@lsp.type.variable.java", {
-    fg = p.fg0,
-  })
+  -- JDTLS-specific semantic token types.
+  link("@lsp.type.record.java", "@type")
+  link("@lsp.type.recordComponent.java", "@variable.member")
+  link("@lsp.type.annotation.java", "@attribute")
+  link("@lsp.type.annotationMember.java", "@attribute")
 
-  hl("@lsp.type.parameter.java", {
-    fg = p.fg0,
-  })
-
-  -- Fields / properties
-  hl("@lsp.type.property.java", {
-    fg = p.fg1,
-  })
-
-  -- Types
-  hl("@lsp.type.class.java", {
-    fg = p.cyan,
-  })
-
-  hl("@lsp.type.interface.java", {
-    fg = p.cyan,
-  })
-
-  hl("@lsp.type.struct.java", {
-    fg = p.cyan,
-  })
-
-  hl("@lsp.type.type.java", {
-    fg = p.cyan,
-  })
-
-  hl("@lsp.type.typeParameter.java", {
-    fg = p.cyan,
-  })
-
-  -- Enums
-  hl("@lsp.type.enum.java", {
-    fg = p.cyan,
-  })
-
-  hl("@lsp.type.enumMember.java", {
-    fg = p.yellow,
-  })
-
-  -- Records
-  hl("@lsp.type.record.java", {
-    fg = p.cyan,
-  })
-
-  hl("@lsp.type.recordComponent.java", {
-    fg = p.fg1,
-  })
-
-  -- Packages / namespaces
-  hl("@lsp.type.namespace.java", {
-    fg = p.fg1,
-  })
-
-  -- Methods
-  hl("@lsp.type.method.java", {
-    fg = p.blue,
-  })
-
-  hl("@lsp.typemod.method.declaration.java", {
-    fg = p.blue,
-  })
-
-  hl("@lsp.typemod.method.static.java", {
-    fg = p.blue,
-  })
-
-  -- Static fields
-  hl("@lsp.typemod.property.static.java", {
-    fg = p.yellow,
-  })
-
-  hl("@lsp.typemod.variable.static.java", {
-    fg = p.yellow,
-  })
-
-  -- Constants / readonly fields
-  hl("@lsp.typemod.property.readonly.java", {
-    fg = p.yellow,
-  })
-
-  hl("@lsp.typemod.variable.readonly.java", {
-    fg = p.yellow,
-  })
-
-  -- Annotations
-  hl("@lsp.type.decorator.java", {
-    fg = p.yellow,
-  })
-
-  hl("@lsp.type.annotationMember.java", {
-    fg = p.yellow,
-  })
+  -- Java final / readonly fields are constants.
+  link("@lsp.typemod.variable.readonly.java", "@constant")
+  link("@lsp.typemod.property.readonly.java", "@constant")
 
   -- ==================================================
   -- Semantic modifiers

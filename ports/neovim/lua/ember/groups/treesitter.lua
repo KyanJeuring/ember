@@ -42,15 +42,15 @@ function M.apply()
   -- ==================================================
 
   hl("@constant", {
-    fg = p.orange,
+    fg = p.yellow,
   })
 
   hl("@constant.builtin", {
-    fg = p.orange_bright,
+    fg = p.yellow,
   })
 
   hl("@constant.macro", {
-    fg = p.orange,
+    fg = p.yellow,
   })
 
   -- ==================================================
@@ -77,12 +77,12 @@ function M.apply()
   link("@string", "String")
 
   hl("@string.documentation", {
-    fg = p.green,
+    fg = p.fg1,
     italic = true,
   })
 
   hl("@string.regexp", {
-    fg = p.cyan,
+    fg = p.fg0,
   })
 
   hl("@string.escape", {
@@ -90,15 +90,15 @@ function M.apply()
   })
 
   hl("@string.special", {
-    fg = p.yellow,
+    fg = p.fg0,
   })
 
   hl("@string.special.symbol", {
-    fg = p.orange,
+    fg = p.fg0,
   })
 
   hl("@string.special.path", {
-    fg = p.green,
+    fg = p.fg0,
   })
 
   hl("@string.special.url", {
@@ -150,7 +150,7 @@ function M.apply()
   })
 
   hl("@attribute.builtin", {
-    fg = p.orange,
+    fg = p.yellow,
   })
 
   hl("@property", {
@@ -175,7 +175,7 @@ function M.apply()
   })
 
   hl("@function.macro", {
-    fg = p.orange,
+    fg = p.blue,
   })
 
   hl("@function.method", {
@@ -198,32 +198,27 @@ function M.apply()
   -- Keywords
   -- ==================================================
 
-  -- General language syntax
+  -- General language structure / declarations
   hl("@keyword", {
     fg = p.orange,
   })
 
-  -- function, fn, def, ...
   hl("@keyword.function", {
     fg = p.orange,
   })
 
-  -- import, package, require, use, ...
   hl("@keyword.import", {
     fg = p.orange,
   })
 
-  -- class, struct, interface, enum, ...
   hl("@keyword.type", {
     fg = p.orange,
   })
 
-  -- public, private, static, final, const, ...
   hl("@keyword.modifier", {
     fg = p.orange,
   })
 
-  -- Directives / preprocessor syntax
   hl("@keyword.directive", {
     fg = p.orange,
   })
@@ -232,7 +227,11 @@ function M.apply()
     fg = p.orange,
   })
 
-  -- Control flow
+  hl("@keyword.special", {
+    fg = p.orange,
+  })
+
+  -- Logic / control flow
   hl("@keyword.conditional", {
     fg = p.purple,
   })
@@ -257,7 +256,11 @@ function M.apply()
     fg = p.purple,
   })
 
-  -- Exceptions / debugging
+  hl("@keyword.logic", {
+    fg = p.purple,
+  })
+
+  -- Errors / exceptions
   hl("@keyword.exception", {
     fg = p.red,
   })
@@ -367,11 +370,11 @@ function M.apply()
   })
 
   hl("@markup.raw", {
-    fg = p.green,
+    fg = p.fg0,
   })
 
   hl("@markup.raw.block", {
-    fg = p.green,
+    fg = p.fg0,
   })
 
   hl("@markup.list", {
@@ -384,60 +387,6 @@ function M.apply()
 
   hl("@markup.list.unchecked", {
     fg = p.muted,
-  })
-
-  -- ==================================================
-  -- Java
-  -- ==================================================
-
-  -- class, interface, enum, record
-  hl("@keyword.type.java", {
-    fg = p.blue,
-  })
-
-  -- public, private, protected, static, final, ...
-  hl("@keyword.modifier.java", {
-    fg = p.orange,
-  })
-
-  -- extends, implements, instanceof, ...
-  hl("@keyword.java", {
-    fg = p.purple,
-  })
-
-  -- Primitive / built-in types
-  hl("@type.builtin.java", {
-    fg = p.cyan,
-    italic = true,
-  })
-
-  -- Classes / interfaces / enums / records
-  hl("@type.java", {
-    fg = p.cyan,
-  })
-
-  -- Methods
-  hl("@function.method.java", {
-    fg = p.blue,
-  })
-
-  hl("@function.method.call.java", {
-    fg = p.blue,
-  })
-
-  -- Fields
-  hl("@variable.member.java", {
-    fg = p.fg1,
-  })
-
-  -- Constants
-  hl("@constant.java", {
-    fg = p.yellow,
-  })
-
-  -- Annotations
-  hl("@attribute.java", {
-    fg = p.yellow,
   })
 
   -- ==================================================
