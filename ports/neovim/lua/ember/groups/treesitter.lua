@@ -379,6 +379,38 @@ function M.apply()
   })
 
   -- ==================================================
+  -- Java
+  -- ==================================================
+
+  hl("@type.java", {
+    fg = p.cyan,
+  })
+
+  hl("@constructor.java", {
+    fg = p.orange_bright,
+  })
+
+  hl("@function.method.java", {
+    fg = p.blue,
+  })
+
+  hl("@function.method.call.java", {
+    fg = p.orange,
+  })
+
+  hl("@property.java", {
+    fg = p.yellow,
+  })
+
+  hl("@constant.java", {
+    fg = p.orange_bright,
+  })
+
+  hl("@variable.member.java", {
+    fg = p.fg1,
+  })
+
+  -- ==================================================
   -- Diff
   -- ==================================================
 
