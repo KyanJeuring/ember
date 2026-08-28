@@ -393,6 +393,7 @@ function M.apply()
   -- YAML
   -- ==================================================
 
+  -- Mapping keys define the structure of a YAML document.
   hl("@property.yaml", {
     fg = p.orange,
   })
@@ -401,6 +402,7 @@ function M.apply()
   -- CSS
   -- ==================================================
 
+  -- Property names define CSS declarations.
   hl("@property.css", {
     fg = p.orange,
   })
