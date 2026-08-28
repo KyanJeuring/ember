@@ -105,7 +105,6 @@ function M.apply(config)
 
   hl("MatchParen", {
     fg = p.orange,
-    bg = p.bg2,
     bold = true,
   })
 
