@@ -12,6 +12,7 @@ muted = "#7F766E"
 orange = "#FF7500"
 orange_bright = "#FF8A2B"
 orange_dark = "#C95C00"
+orange_surface = "#33251C"
 
 [colors]
 red = "#F25F5C"

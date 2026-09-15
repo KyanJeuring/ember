@@ -20,6 +20,7 @@ M.muted = "#7F766E"
 M.orange = "#FF7500"
 M.orange_bright = "#FF8A2B"
 M.orange_dark = "#C95C00"
+M.orange_surface = "#33251C"
 
 -- ==================================================
 -- Complementary colors

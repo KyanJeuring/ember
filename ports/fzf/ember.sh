@@ -2,13 +2,11 @@
 # Ember - fzf
 # ==================================================
 
-export EMBER_ORANGE='255;117;0'
-
 export FZF_DEFAULT_OPTS="${FZF_DEFAULT_OPTS:-}
 --color=fg:#C9C3BC
 --color=fg+:#F2EEE9
 --color=bg:#0B0B0B
---color=bg+:#1C1C1C
+--color=bg+:#33251C
 --color=hl:#FF7500
 --color=hl+:#FF8A2B
 --color=border:#FF7500
